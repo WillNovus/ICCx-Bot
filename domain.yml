@@ -1,0 +1,107 @@
+version: "3.1"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - thanks
+  - deny
+  - book_hall
+  - book_date 
+  - human_handoff
+  - bot_challenge
+
+entities:
+  - name
+  - date-time
+  - hall
+  - attendees
+
+#slots:
+  #name:
+    #type: text
+    #auto_fill: false
+    #influence_conversation: false  
+  #date-time:
+    #type: text
+    #auto_fill: false
+    #influence_conversation: false
+  #hall:
+    #type: text
+    #auto_fill: false
+    #influence_conversation: false
+  #attendees:
+    #type: text
+    #auto_fill: false
+    #influence_conversation: false
+
+responses:
+  utter_greet:
+  - text: "Welcome to our conference hall booking service! May I know your name, please?"
+  - text: "Hello there! I am here to assist in booking your Hall reservation. May I have your name, please?"
+  utter_name:
+  - text: "Thank you {name} for choosing ICC! Could you please provide me the with date and time of your event?"
+  - text: "We appreciate you {name} for choosing ICC! Could you please provide me with the date, time of your event?"
+  utter_attendees:
+  - text: "Alright! I would like to know your estimated number of attendees."
+  - text: "Great! How many people are you expecting to attend?"
+  utter_human_handoff:
+  - text: "Please give me a sec, I would connect you to a human assistant now."
+  utter_goodbye:
+  - text: "Goodbye!"
+  utter_book_confirmation:
+  - text: "Are you willing to proceed with the hall reservation?"
+  utter_iamabot:
+  - text: "I am Halima, A bot powered by the Abuja International Conference Center."
+  utter_thanks:
+  - text: "You are highly welcomed!"
+  - text: "You are welcome."
+  utter_out_of_scope:
+  - text: "I am sorry, this is out of my scope. I am at service for your Hall reservations."
+  #utter_please_rephrase:
+  #- text: "Could you please rephrase your sentence? I did not get you clearly."
+  utter_help:
+  - text: "I can help book a hall for your reservation."
+  - text: "I am here to assist you in making your hall reservation."
+  utter_booking_success:
+  - text: "Your hall reservation is successful!"
+actions:
+  - utter_greet
+  - utter_info_uno
+  - utter_info_duo
+  - utter_book_confirmation
+  - utter_goodbye
+  - utter_handoff
+  - utter_welcome
+  - utter_iamabot
+  - utter_help
+  - utter_out_of_scope
+  - utter_booking_success
+  - utter_anything_else
+  - utter_please_rephrase
+  - action_book_hall
+  - action_human_handoff
+  - action_check_hall_availability
+
+#forms:
+  #hall_form:
+   #name:
+   #- entity: name
+     #type: from_entity
+   #hall:
+    #- entity: hall
+      #type: from_entity
+   #date-time:
+    #- entity: date-time
+      #type: from_entity
+   #attendees:
+    #- entity: attendees
+      #type: from_entity
+
+
+
+

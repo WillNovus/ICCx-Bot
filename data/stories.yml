@@ -1,0 +1,57 @@
+version: "3.1"
+
+stories:
+
+- story: answer out of scope
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: help
+  steps:
+  - intent: help
+  - action: utter_help
+
+- story: human_handoff
+  steps:
+  - intent: human_handoff
+  - action: utter_human_handoff
+  - action: action_human_handoff
+
+- story: book_hall
+  steps:
+  - intent: book_hall
+  - action: utter_greet
+
+- story: thank
+  steps:
+  - intent: thanks
+  - action: utter_thanks
+
+- story: goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Hall Booking
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: name
+  - action: utter_name
+  - intent: date-time
+  - action: utter_attendees
+  - intent: event_attendees
+  - action: utter_book_confirmation
+  - intent: affirm
+  - action: utter_booking_success
+
+
+- story: Handle user's denial
+  steps:  
+  - intent: deny
+  - action: utter_goodbye
+
+ 
+  
+  

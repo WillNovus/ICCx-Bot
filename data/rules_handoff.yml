@@ -1,0 +1,21 @@
+#version: "3.1"
+
+#rules:
+  
+#- rule: Provide handoff options
+  #- action: utter_ask_handoff
+  #- action: action_handoff_options
+  
+#- rule: Execute handoff
+  #steps:
+  #- action: action_handoff_options
+  #- intent: trigger_handoff
+  #- action: action_handoff
+
+#- rule: Deny handoff
+  #steps:
+  #- action: action_handoff_options
+  #- intent: deny
+  #- action: utter_ask_whatelse
+
+  
